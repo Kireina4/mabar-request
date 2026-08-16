@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Star's Mabar Club 🎮</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =========================================
+           GLOBAL
+        ========================================= */
+
+        :root {
+            --cream: #fff9ed;
+            --cream-dark: #f5ecd8;
+
+            --coral: #ff8878;
+            --coral-dark: #ed7062;
+
+            --pink: #ffdfe2;
+            --pink-light: #ffeef0;
+
+            --lime: #dfff78;
+            --lime-dark: #c7e95b;
+
+            --blue: #cfe8f5;
+
+            --green: #9bd65d;
+
+            --black: #252525;
+            --white: #ffffff;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            margin: 0;
+
+            min-height: 100vh;
+
+            background: var(--cream);
+
+            color: var(--black);
+
+            font-family: "Nunito", sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        button,
+        .brand {
+            font-family: "Fredoka", sans-serif;
+        }
+
+
+
+        /* =========================================
+           ANNOUNCEMENT BAR
+        ========================================= */
+
+        .announcement {
+            width: 100%;
+
+            padding: 7px 15px;
+
+            background: var(--coral);
+
+            color: white;
+
+            text-align: center;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: .3px;
+        }
+
+
+
+        /* =========================================
+           NAVBAR
+        ========================================= */
+
+        .navbar-custom {
+            min-height: 76px;
+
+            background: rgba(255, 249, 237, .95);
+
+            border-bottom: 2px solid var(--black);
+
+            padding: 0 5%;
+        }
+
+
+        .brand {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: var(--black);
+
+            text-decoration: none;
+
+            font-size: 25px;
+
+            font-weight: 600;
+        }
+
+
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            background: var(--pink);
+
+            border: 2px solid var(--black);
+
+            border-radius: 50%;
+
+            font-size: 22px;
+
+            transform: rotate(-5deg);
+        }
+
+
+        .nav-link {
+            color: var(--black) !important;
+
+            font-weight: 600;
+
+            margin-left: 15px;
+
+            transition: .2s;
+        }
+
+
+        .nav-link:hover {
+            color: var(--coral-dark) !important;
+
+            transform: translateY(-2px);
+        }
+
+
+
+        /* =========================================
+           MAIN
+        ========================================= */
+
+        .main-wrapper {
+            min-height: calc(100vh - 115px);
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 50px 20px;
+
+            position: relative;
+        }
+
+
+
+        /* =========================================
+           DECORATIONS
+        ========================================= */
+
+        .decor {
+            position: absolute;
+
+            pointer-events: none;
+
+            z-index: 0;
+        }
+
+
+        .star {
+            font-size: 55px;
+
+            color: var(--coral);
+
+            transform: rotate(15deg);
+        }
+
+
+        .circle {
+            width: 18px;
+            height: 18px;
+
+            border-radius: 50%;
+
+            background: var(--coral);
+        }
+
+
+        .circle.lime {
+            background: var(--lime-dark);
+        }
+
+
+        .decor-1 {
+            top: 8%;
+
+            left: 8%;
+        }
+
+
+        .decor-2 {
+            top: 16%;
+
+            right: 10%;
+        }
+
+
+        .decor-3 {
+            bottom: 8%;
+
+            left: 13%;
+        }
+
+
+        .decor-4 {
+            bottom: 15%;
+
+            right: 12%;
+        }
+
+
+
+        /* =========================================
+           HERO CARD
+        ========================================= */
+
+        .hero-card {
+            width: 100%;
+
+            max-width: 900px;
+
+            min-height: 470px;
+
+            margin: auto;
+
+            position: relative;
+
+            z-index: 2;
+
+            display: flex;
+
+            align-items: center;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #fffaf2 0%,
+                    #ffe7e9 52%,
+                    #f4e8ff 100%
+                );
+
+            border: 2px solid var(--black);
+
+            border-radius: 18px;
+
+            box-shadow:
+                7px 7px 0 var(--black);
+
+            padding: 55px;
+        }
+
+
+        .hero-content {
+            width: 55%;
+
+            position: relative;
+
+            z-index: 5;
+        }
+
+
+        .small-label {
+            display: inline-block;
+
+            background: var(--lime);
+
+            border: 1.5px solid var(--black);
+
+            padding: 7px 16px;
+
+            border-radius: 30px;
+
+            font-family: "Fredoka", sans-serif;
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+
+            transform: rotate(-2deg);
+        }
+
+
+        .hero-title {
+            font-size: clamp(42px, 6vw, 70px);
+
+            line-height: .95;
+
+            font-weight: 600;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero-title span {
+            color: var(--coral-dark);
+        }
+
+
+        .hero-description {
+            max-width: 460px;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+        }
+
+
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        .buttons {
+            display: flex;
+
+            gap: 14px;
+
+            align-items: center;
+        }
+
+
+        .cute-btn {
+            border: 2px solid var(--black);
+
+            border-radius: 14px;
+
+            padding: 13px 27px;
+
+            font-family: "Fredoka", sans-serif;
+
+            font-size: 17px;
+
+            font-weight: 500;
+
+            cursor: pointer;
+
+            transition: .18s;
+
+            box-shadow: 3px 3px 0 var(--black);
+        }
+
+
+        .cute-btn:hover {
+            transform: translate(2px, 2px);
+
+            box-shadow: 1px 1px 0 var(--black);
+        }
+
+
+        #yesBtn {
+            background: var(--coral);
+
+            color: white;
+        }
+
+
+        #noBtn {
+            background: var(--white);
+
+            color: var(--black);
+
+            position: relative;
+
+            z-index: 100;
+        }
+
+
+
+        /* =========================================
+           MESSAGE
+        ========================================= */
+
+        #message {
+            min-height: 28px;
+
+            margin-bottom: 22px;
+
+            font-size: 17px;
+
+            font-weight: 600;
+
+            color: #555;
+        }
+
+
+
+        /* =========================================
+           ART / RIGHT SIDE
+        ========================================= */
+
+        .hero-art {
+            width: 45%;
+
+            height: 100%;
+
+            position: absolute;
+
+            right: 0;
+
+            top: 0;
+        }
+
+
+        .art-card {
+            position: absolute;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            border: 2px solid var(--black);
+
+            border-radius: 17px;
+
+            box-shadow: 4px 4px 0 var(--black);
+
+            font-size: 55px;
+        }
+
+
+        .art-main {
+            width: 230px;
+            height: 270px;
+
+            right: 90px;
+            top: 95px;
+
+            background: var(--blue);
+
+            transform: rotate(4deg);
+
+            z-index: 2;
+        }
+
+
+        .art-small {
+            width: 150px;
+            height: 150px;
+
+            right: 30px;
+            top: 45px;
+
+            background: var(--pink);
+
+            transform: rotate(-7deg);
+
+            z-index: 3;
+
+            font-size: 42px;
+        }
+
+
+        .art-bottom {
+            width: 155px;
+            height: 120px;
+
+            right: 65px;
+            bottom: 45px;
+
+            background: var(--lime);
+
+            transform: rotate(-5deg);
+
+            z-index: 4;
+
+            font-size: 38px;
+        }
+
+
+        .art-text {
+            text-align: center;
+
+            font-family: "Fredoka", sans-serif;
+
+            font-size: 25px;
+
+            line-height: 1.1;
+        }
+
+
+
+        /* =========================================
+           SECOND PAGE
+        ========================================= */
+
+        #page2 {
+            display: none;
+        }
+
+
+        .success-card {
+            width: 100%;
+
+            max-width: 720px;
+
+            margin: auto;
+
+            padding: 55px;
+
+            background: var(--white);
+
+            border: 2px solid var(--black);
+
+            border-radius: 20px;
+
+            box-shadow: 7px 7px 0 var(--black);
+
+            text-align: center;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .success-icon {
+            width: 90px;
+            height: 90px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            margin: 0 auto 25px;
+
+            background: var(--lime);
+
+            border: 2px solid var(--black);
+
+            border-radius: 50%;
+
+            font-size: 45px;
+
+            transform: rotate(5deg);
+        }
+
+
+        .success-card h1 {
+            font-size: clamp(40px, 6vw, 62px);
+
+            margin-bottom: 12px;
+        }
+
+
+        .success-card h1 span {
+            color: var(--coral-dark);
+        }
+
+
+        .success-card > p {
+            font-size: 18px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .message-box {
+            max-width: 560px;
+
+            margin: 30px auto 0;
+        }
+
+
+        textarea {
+            width: 100%;
+
+            min-height: 150px;
+
+            padding: 18px;
+
+            resize: none;
+
+            border: 2px solid var(--black);
+
+            border-radius: 15px;
+
+            background: var(--cream);
+
+            font-family: "Nunito", sans-serif;
+
+            font-size: 16px;
+
+            outline: none;
+
+            box-shadow: 3px 3px 0 var(--black);
+
+            transition: .2s;
+        }
+
+
+        textarea:focus {
+            background: white;
+
+            box-shadow: 5px 5px 0 var(--coral);
+        }
+
+
+        #sendBtn {
+            margin-top: 22px;
+
+            background: var(--coral);
+
+            color: white;
+        }
+
+
+        #warning {
+            display: none;
+
+            margin-top: 15px;
+
+            color: var(--coral-dark);
+
+            font-weight: 700;
+        }
+
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .tiny-note {
+            margin-top: 25px;
+
+            font-size: 13px;
+
+            color: #777;
+        }
+
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 768px) {
+
+            .navbar-custom {
+                padding: 0 20px;
+            }
+
+
+            .nav-links {
+                display: none;
+            }
+
+
+            .main-wrapper {
+                padding: 35px 15px;
+            }
+
+
+            .hero-card {
+                min-height: 600px;
+
+                padding: 35px 25px;
+
+                align-items: flex-start;
+
+                box-shadow: 5px 5px 0 var(--black);
+            }
+
+
+            .hero-content {
+                width: 100%;
+
+                text-align: center;
+            }
+
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+
+            .buttons {
+                justify-content: center;
+            }
+
+
+            .hero-art {
+                width: 100%;
+
+                height: 240px;
+
+                top: auto;
+
+                bottom: -10px;
+            }
+
+
+            .art-main {
+                width: 150px;
+                height: 150px;
+
+                right: 50%;
+
+                transform:
+                    translateX(50%)
+                    rotate(4deg);
+
+                top: 25px;
+            }
+
+
+            .art-small {
+                width: 90px;
+                height: 90px;
+
+                right: 8%;
+
+                top: 0;
+
+                font-size: 28px;
+            }
+
+
+            .art-bottom {
+                width: 100px;
+                height: 80px;
+
+                left: 8%;
+
+                bottom: 10px;
+
+                font-size: 24px;
+            }
+
+
+            .success-card {
+                padding: 40px 22px;
+
+                box-shadow: 5px 5px 0 var(--black);
+            }
+
+        }
+
+    </style>
+</head>
+
+
+
+<body>
+
+
+    <!-- =========================================
+         ANNOUNCEMENT
+    ========================================== -->
+
+    <div class="announcement">
+        ✦ AJAKAN MABAR PENTING BANGETS ✦
+    </div>
+
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <nav class="navbar-custom d-flex justify-content-between align-items-center">
+
+        <a class="brand" href="#">
+            <div class="brand-icon">
+                🎮
+            </div>
+
+            mabar yuk
+        </a>
+
+
+        <div class="nav-links d-flex align-items-center">
+
+            <a class="nav-link" href="#">
+                Home
+            </a>
+
+            <a class="nav-link" href="#">
+                Request
+            </a>
+
+            <a class="nav-link" href="#">
+                ✦
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =========================================
+         MAIN
+    ========================================== -->
+
+    <main class="main-wrapper">
+
+
+        <!-- Decorative elements -->
+
+        <div class="decor decor-1 star">
+            ✦
+        </div>
+
+        <div class="decor decor-2 circle">
+        </div>
+
+        <div class="decor decor-3 circle lime">
+        </div>
+
+        <div class="decor decor-4 star">
+            ✦
+        </div>
+
+
+
+        <!-- =====================================
+             PAGE 1
+        ====================================== -->
+
+        <section
+            class="hero-card"
+            id="page1"
+        >
+
+
+            <!-- TEXT -->
+
+            <div class="hero-content">
+
+                <span class="small-label">
+                    🎮 CO-OP REQUEST
+                </span>
+
+
+                <h1
+                    class="hero-title"
+                    id="question"
+                >
+                    Mabar yok
+                    <br>
+                    <span>sama aku?</span>
+                </h1>
+
+
+                <p id="message">
+                    Aku cuma nanya kok...
+                </p>
+
+
+                <div class="buttons">
+
+                    <button
+                        class="cute-btn"
+                        id="yesBtn"
+                    >
+                        YES! 💚
+                    </button>
+
+
+                    <button
+                        class="cute-btn"
+                        id="noBtn"
+                    >
+                        NO 💔
+                    </button>
+
+                </div>
+
+
+                <p class="tiny-note">
+                    * tidak ada paksaan. kecuali tombol NO. mungkin.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================
+                 ART
+            ================================== -->
+
+            <div class="hero-art">
+
+                <div class="art-card art-main">
+
+                    <div class="art-text">
+
+                        READY
+                        <br>
+
+                        TO
+                        <br>
+
+                        PLAY?
+
+                        <br>
+
+                        🎮
+
+                    </div>
+
+                </div>
+
+
+                <div class="art-card art-small">
+                    ⭐
+                </div>
+
+
+                <div class="art-card art-bottom">
+                    🕹️
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =====================================
+             PAGE 2
+        ====================================== -->
+
+        <section
+            class="success-card"
+            id="page2"
+        >
+
+            <div class="success-icon">
+                🎉
+            </div>
+
+
+            <h1>
+                YAY<span>YYYY!!</span>
+            </h1>
+
+
+            <p>
+                SERIUS NIH? LET'S GOOOO
+            </p>
+
+
+            <p>
+                Sekarang tinggal kasih tahu aku
+                sesuatu! <br>
+                ya.. kalau sibuk sih bilang aja gpp deh.. aku bakal nunggu kok
+            </p>
+
+
+            <div class="message-box">
+
+                <textarea
+                    id="userMessage"
+                    placeholder="Contoh: ayok, kapan kita mabar?"
+                ></textarea>
+
+
+                <button
+                    class="cute-btn"
+                    id="sendBtn"
+                >
+                    KIRIM KE STAR 💌
+                </button>
+
+
+                <p id="warning">
+                    Tulis pesannya dulu dong..
+                </p>
+
+            </div>
+
+
+            <p class="tiny-note">
+                ✦ pesan akan dikirim melalui WhatsApp ✦
+            </p>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+    /* =========================================
+       VARIABLES
+    ========================================= */
+
+    let noCount = 0;
+
+
+    const messages = [
+
+        "Serius gak mau mabar sama aku? ",
+
+        "Um... sibuk ya..?",
+
+        "Yakin nih? 🤨",
+
+        "Sekali ajaa 👉👈",
+
+        "Aku cuma ngajak mabar loh 😭",
+
+        "Kok NO terus sih...",
+
+        "Aku mw ngobrol... pentings!!",
+
+        "PLEASEEEE 🎮",
+
+        "Aku ditolak nih...",
+
+        "Yang bener ajaaa...",
+
+        "Masih mau pencet NO??",
+
+        "Aku tahu kamu sebenarnya mau kan.. hehe",
+
+        "Satu match aja masa nggak boleh 😭",
+
+        "Aku masih menunggu jawabanmu...",
+
+        "NO terus, NO terus...",
+
+        "Aku punya waktu seharian buat ini 💀"
+
+    ];
+
+
+
+    /* =========================================
+       ELEMENTS
+    ========================================= */
+
+    const page1 =
+        document.getElementById("page1");
+
+    const page2 =
+        document.getElementById("page2");
+
+
+    const yesBtn =
+        document.getElementById("yesBtn");
+
+    const noBtn =
+        document.getElementById("noBtn");
+
+
+    const question =
+        document.getElementById("question");
+
+    const message =
+        document.getElementById("message");
+
+
+    const userMessage =
+        document.getElementById("userMessage");
+
+    const sendBtn =
+        document.getElementById("sendBtn");
+
+    const warning =
+        document.getElementById("warning");
+
+
+
+    /* =========================================
+       NO BUTTON
+    ========================================= */
+
+    noBtn.addEventListener(
+        "click",
+        function () {
+
+            noCount++;
+
+
+            /* =====================================
+               PESAN NO
+            ===================================== */
+
+            if (noCount === 4) {
+
+                /*
+                    Pesan spesial pada klik ke-4
+                */
+
+                message.textContent =
+                    "hmm yaudah deh kalau sibuk.. ak tunggu kok";
+
+            } else {
+
+                /*
+                    Selain klik ke-4,
+                    pesan tetap randomized
+                */
+
+                const randomIndex =
+                    Math.floor(
+                        Math.random()
+                        * messages.length
+                    );
+
+
+                message.textContent =
+                    messages[randomIndex];
+
+            }
+
+
+
+            /* =====================================
+               MOVE NO BUTTON
+            ===================================== */
+
+            noBtn.style.position =
+                "fixed";
+
+
+            const buttonWidth =
+                noBtn.offsetWidth;
+
+            const buttonHeight =
+                noBtn.offsetHeight;
+
+
+            const padding = 20;
+
+
+            const maxX =
+                window.innerWidth
+                - buttonWidth
+                - padding;
+
+
+            const maxY =
+                window.innerHeight
+                - buttonHeight
+                - padding;
+
+
+            const randomX =
+                Math.floor(
+                    Math.random()
+                    * maxX
+                );
+
+
+            const randomY =
+                Math.floor(
+                    Math.random()
+                    * maxY
+                );
+
+
+            noBtn.style.left =
+                randomX + "px";
+
+            noBtn.style.top =
+                randomY + "px";
+
+
+
+            /* =====================================
+               CHANGE QUESTION
+            ===================================== */
+
+            if (noCount === 3) {
+
+                question.innerHTML =
+                    "Beneran<br><span>gak mau...?</span>";
+
+            }
+
+
+            if (noCount === 6) {
+
+                question.innerHTML =
+                    "hmm<br><span>sibuk ya...?</span>";
+
+            }
+
+
+            if (noCount === 9) {
+
+                question.innerHTML =
+                    "Satu<br><span>match aja pliszz 😭</span>";
+
+            }
+
+
+            if (noCount >= 12) {
+
+                question.innerHTML =
+                    "KAMU MASIH<br><span>MAU PENCET NO?! 💀</span>";
+
+            }
+
+
+
+            /* =====================================
+               YES GETS BIGGER
+            ===================================== */
+
+            if (noCount >= 4) {
+
+                const scale =
+                    1 + (noCount * 0.04);
+
+                yesBtn.style.transform =
+                    `scale(${scale})`;
+
+            }
+
+        }
+    );
+
+
+
+    /* =========================================
+       YES BUTTON
+    ========================================= */
+
+    yesBtn.addEventListener(
+        "click",
+        function () {
+
+            page1.style.display =
+                "none";
+
+
+            page2.style.display =
+                "block";
+
+
+            /*
+                Reset NO
+            */
+
+            noBtn.style.position =
+                "relative";
+
+
+            noBtn.style.left = "";
+
+            noBtn.style.top = "";
+
+        }
+    );
+
+
+
+    /* =========================================
+       WHATSAPP
+    ========================================= */
+
+    sendBtn.addEventListener(
+        "click",
+        function () {
+
+            const text =
+                userMessage.value.trim();
+
+
+            if (text === "") {
+
+                warning.style.display =
+                    "block";
+
+                return;
+
+            }
+
+
+            warning.style.display =
+                "none";
+
+
+
+            /*
+                NOMOR WHATSAPP STAR
+            */
+
+            const myNumber =
+                "6281573177618";
+
+
+
+            /*
+                PESAN
+            */
+
+            const whatsappMessage =
+`🎮 MABAR REQUEST 🎮
+
+${text}
+
+— dikirim dari website mabar 😎`;
+
+
+
+            /*
+                Encode
+            */
+
+            const encodedMessage =
+                encodeURIComponent(
+                    whatsappMessage
+                );
+
+
+
+            /*
+                WhatsApp URL
+            */
+
+            const whatsappURL =
+                `https://wa.me/${myNumber}?text=${encodedMessage}`;
+
+
+            /*
+                Open WhatsApp
+            */
+
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
+
+        }
+    );
+
+</script>
+
+</body>
+</html>
