@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -20,7 +21,6 @@
         href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap"
         rel="stylesheet"
     >
-
 
     <style>
 
@@ -188,7 +188,7 @@
         ========================================= */
 
         .main-wrapper {
-            min-height: calc(100vh - 115px);
+            min-height: calc(100vh - 171px);
 
             display: flex;
 
@@ -681,7 +681,7 @@
 
 
         /* =========================================
-           FOOTER
+           SMALL NOTES
         ========================================= */
 
         .tiny-note {
@@ -690,6 +690,39 @@
             font-size: 13px;
 
             color: #777;
+        }
+
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .footer {
+            width: 100%;
+
+            padding: 18px 20px;
+
+            background: var(--cream-dark);
+
+            border-top: 2px solid var(--black);
+
+            text-align: center;
+
+            font-family: "Fredoka", sans-serif;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            color: var(--black);
+        }
+
+
+        .footer span {
+            color: var(--coral-dark);
+
+            font-weight: 600;
         }
 
 
@@ -711,7 +744,9 @@
 
 
             .main-wrapper {
-                padding: 35px 15px;
+                min-height: auto;
+
+                padding: 35px 15px 55px;
             }
 
 
@@ -797,6 +832,13 @@
                 padding: 40px 22px;
 
                 box-shadow: 5px 5px 0 var(--black);
+            }
+
+
+            .footer {
+                padding: 16px 15px;
+
+                font-size: 13px;
             }
 
         }
@@ -1011,8 +1053,8 @@
             <p>
                 Sekarang tinggal kasih tahu aku
                 sesuatu! <br>
-               Ada sesuatu pentings yang mw ak obrolin!!<br>
-               Tapi.. kalau sibuk gpp deh aku tunggu kokk 
+                Ada sesuatu pentings yang mw ak obrolin!!<br>
+                Tapi.. kalau sibuk gpp deh aku tunggu kokk
             </p>
 
 
@@ -1050,319 +1092,329 @@
 
 
     <!-- =========================================
-     JAVASCRIPT
-========================================= -->
+         FOOTER
+    ========================================== -->
 
-<script>
-
-    /* =========================================
-       VARIABLES
-    ========================================= */
-
-    let noCount = 0;
-
-
-    const messages = [
-
-        "Serius gak mau mabar sama aku? ",
-
-        "Um... sibuk ya..?",
-
-        "Yakin nih? 🤨",
-
-        "Sekali ajaa 👉👈",
-
-        "Aku cuma ngajak mabar loh 😭",
-
-        "Kok NO terus sih...",
-
-        "Aku mw ngobrol... pentings!!",
-
-        "PLEASEEEE 🎮",
-
-        "Aku ditolak nih...",
-
-        "Yang bener ajaaa...",
-
-        "Masih mau pencet NO??",
-
-        "Aku tahu kamu sebenarnya mau kan.. hehe",
-
-        "Satu match aja masa nggak boleh 😭",
-
-        "Aku masih menunggu jawabanmu...",
-
-        "NO terus, NO terus...",
-
-        "Aku punya waktu seharian buat ini 💀"
-
-    ];
+    <footer class="footer">
+        Made with ✦ by <span>Star</span>
+    </footer>
 
 
 
-    /* =========================================
-       ELEMENTS
-    ========================================= */
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
-    const page1 =
-        document.getElementById("page1");
+    <script>
 
-    const page2 =
-        document.getElementById("page2");
+        /* =========================================
+           VARIABLES
+        ========================================= */
 
-
-    const yesBtn =
-        document.getElementById("yesBtn");
-
-    const noBtn =
-        document.getElementById("noBtn");
+        let noCount = 0;
 
 
-    const question =
-        document.getElementById("question");
+        const messages = [
 
-    const message =
-        document.getElementById("message");
+            "Serius gak mau mabar sama aku? ",
+
+            "Um... sibuk ya..?",
+
+            "Yakin nih? 🤨",
+
+            "Sekali ajaa 👉👈",
+
+            "Aku cuma ngajak mabar loh 😭",
+
+            "Kok NO terus sih...",
+
+            "Aku mw ngobrol... pentings!!",
+
+            "PLEASEEEE 🎮",
+
+            "Aku ditolak nih...",
+
+            "Yang bener ajaaa...",
+
+            "Masih mau pencet NO??",
+
+            "Aku tahu kamu sebenarnya mau kan.. hehe",
+
+            "Satu match aja masa nggak boleh 😭",
+
+            "Aku masih menunggu jawabanmu...",
+
+            "NO terus, NO terus...",
+
+            "Aku punya waktu seharian buat ini 💀"
+
+        ];
 
 
-    const userMessage =
-        document.getElementById("userMessage");
 
-    const sendBtn =
-        document.getElementById("sendBtn");
+        /* =========================================
+           ELEMENTS
+        ========================================= */
 
-    const warning =
-        document.getElementById("warning");
+        const page1 =
+            document.getElementById("page1");
 
-
-
-    /* =========================================
-       NO BUTTON
-    ========================================= */
-
-    noBtn.addEventListener(
-        "click",
-        function () {
-
-            noCount++;
+        const page2 =
+            document.getElementById("page2");
 
 
-            /* =====================================
-               PESAN NO
-            ===================================== */
+        const yesBtn =
+            document.getElementById("yesBtn");
 
-            if (noCount === 4) {
+        const noBtn =
+            document.getElementById("noBtn");
 
-                /*
-                    Pesan spesial pada klik ke-4
-                */
 
-                message.textContent =
-                    "hmm yaudah deh kalau sibuk.. ak tunggu kok";
+        const question =
+            document.getElementById("question");
 
-            } else {
+        const message =
+            document.getElementById("message");
 
-                /*
-                    Selain klik ke-4,
-                    pesan tetap randomized
-                */
 
-                const randomIndex =
+        const userMessage =
+            document.getElementById("userMessage");
+
+        const sendBtn =
+            document.getElementById("sendBtn");
+
+        const warning =
+            document.getElementById("warning");
+
+
+
+        /* =========================================
+           NO BUTTON
+        ========================================= */
+
+        noBtn.addEventListener(
+            "click",
+            function () {
+
+                noCount++;
+
+
+                /* =====================================
+                   PESAN NO
+                ===================================== */
+
+                if (noCount === 4) {
+
+                    /*
+                        Pesan spesial pada klik ke-4
+                    */
+
+                    message.textContent =
+                        "hmm yaudah deh kalau sibuk.. ak tunggu kok";
+
+                } else {
+
+                    /*
+                        Selain klik ke-4,
+                        pesan tetap randomized
+                    */
+
+                    const randomIndex =
+                        Math.floor(
+                            Math.random()
+                            * messages.length
+                        );
+
+
+                    message.textContent =
+                        messages[randomIndex];
+
+                }
+
+
+
+                /* =====================================
+                   MOVE NO BUTTON
+                ===================================== */
+
+                noBtn.style.position =
+                    "fixed";
+
+
+                const buttonWidth =
+                    noBtn.offsetWidth;
+
+                const buttonHeight =
+                    noBtn.offsetHeight;
+
+
+                const padding = 20;
+
+
+                const maxX =
+                    window.innerWidth
+                    - buttonWidth
+                    - padding;
+
+
+                const maxY =
+                    window.innerHeight
+                    - buttonHeight
+                    - padding;
+
+
+                const randomX =
                     Math.floor(
                         Math.random()
-                        * messages.length
+                        * maxX
                     );
 
 
-                message.textContent =
-                    messages[randomIndex];
+                const randomY =
+                    Math.floor(
+                        Math.random()
+                        * maxY
+                    );
+
+
+                noBtn.style.left =
+                    randomX + "px";
+
+                noBtn.style.top =
+                    randomY + "px";
+
+
+
+                /* =====================================
+                   CHANGE QUESTION
+                ===================================== */
+
+                if (noCount === 3) {
+
+                    question.innerHTML =
+                        "Beneran<br><span>gak mau...?</span>";
+
+                }
+
+
+                if (noCount === 6) {
+
+                    question.innerHTML =
+                        "hmm<br><span>sibuk ya...?</span>";
+
+                }
+
+
+                if (noCount === 9) {
+
+                    question.innerHTML =
+                        "Satu<br><span>match aja pliszz 😭</span>";
+
+                }
+
+
+                if (noCount >= 12) {
+
+                    question.innerHTML =
+                        "KAMU MASIH<br><span>MAU PENCET NO?! 💀</span>";
+
+                }
+
+
+
+                /* =====================================
+                   YES GETS BIGGER
+                ===================================== */
+
+                if (noCount >= 4) {
+
+                    const scale =
+                        1 + (noCount * 0.04);
+
+                    yesBtn.style.transform =
+                        `scale(${scale})`;
+
+                }
 
             }
+        );
 
 
 
-            /* =====================================
-               MOVE NO BUTTON
-            ===================================== */
+        /* =========================================
+           YES BUTTON
+        ========================================= */
 
-            noBtn.style.position =
-                "fixed";
+        yesBtn.addEventListener(
+            "click",
+            function () {
 
+                page1.style.display =
+                    "none";
 
-            const buttonWidth =
-                noBtn.offsetWidth;
 
-            const buttonHeight =
-                noBtn.offsetHeight;
-
-
-            const padding = 20;
-
-
-            const maxX =
-                window.innerWidth
-                - buttonWidth
-                - padding;
-
-
-            const maxY =
-                window.innerHeight
-                - buttonHeight
-                - padding;
-
-
-            const randomX =
-                Math.floor(
-                    Math.random()
-                    * maxX
-                );
-
-
-            const randomY =
-                Math.floor(
-                    Math.random()
-                    * maxY
-                );
-
-
-            noBtn.style.left =
-                randomX + "px";
-
-            noBtn.style.top =
-                randomY + "px";
-
-
-
-            /* =====================================
-               CHANGE QUESTION
-            ===================================== */
-
-            if (noCount === 3) {
-
-                question.innerHTML =
-                    "Beneran<br><span>gak mau...?</span>";
-
-            }
-
-
-            if (noCount === 6) {
-
-                question.innerHTML =
-                    "hmm<br><span>sibuk ya...?</span>";
-
-            }
-
-
-            if (noCount === 9) {
-
-                question.innerHTML =
-                    "Satu<br><span>match aja pliszz 😭</span>";
-
-            }
-
-
-            if (noCount >= 12) {
-
-                question.innerHTML =
-                    "KAMU MASIH<br><span>MAU PENCET NO?! 💀</span>";
-
-            }
-
-
-
-            /* =====================================
-               YES GETS BIGGER
-            ===================================== */
-
-            if (noCount >= 4) {
-
-                const scale =
-                    1 + (noCount * 0.04);
-
-                yesBtn.style.transform =
-                    `scale(${scale})`;
-
-            }
-
-        }
-    );
-
-
-
-    /* =========================================
-       YES BUTTON
-    ========================================= */
-
-    yesBtn.addEventListener(
-        "click",
-        function () {
-
-            page1.style.display =
-                "none";
-
-
-            page2.style.display =
-                "block";
-
-
-            /*
-                Reset NO
-            */
-
-            noBtn.style.position =
-                "relative";
-
-
-            noBtn.style.left = "";
-
-            noBtn.style.top = "";
-
-        }
-    );
-
-
-
-    /* =========================================
-       WHATSAPP
-    ========================================= */
-
-    sendBtn.addEventListener(
-        "click",
-        function () {
-
-            const text =
-                userMessage.value.trim();
-
-
-            if (text === "") {
-
-                warning.style.display =
+                page2.style.display =
                     "block";
 
-                return;
+
+                /*
+                    Reset NO
+                */
+
+                noBtn.style.position =
+                    "relative";
+
+
+                noBtn.style.left = "";
+
+                noBtn.style.top = "";
 
             }
-
-
-            warning.style.display =
-                "none";
+        );
 
 
 
-            /*
-                NOMOR WHATSAPP STAR
-            */
+        /* =========================================
+           WHATSAPP
+        ========================================= */
 
-            const myNumber =
-                "6281573177618";
+        sendBtn.addEventListener(
+            "click",
+            function () {
+
+                const text =
+                    userMessage.value.trim();
+
+
+                if (text === "") {
+
+                    warning.style.display =
+                        "block";
+
+                    return;
+
+                }
+
+
+                warning.style.display =
+                    "none";
 
 
 
-            /*
-                PESAN
-            */
+                /*
+                    NOMOR WHATSAPP STAR
+                */
 
-            const whatsappMessage =
+                const myNumber =
+                    "6281573177618";
+
+
+
+                /*
+                    PESAN
+                */
+
+                const whatsappMessage =
 `🎮 MABAR REQUEST 🎮
 
 ${text}
@@ -1371,38 +1423,39 @@ ${text}
 
 
 
-            /*
-                Encode
-            */
+                /*
+                    Encode
+                */
 
-            const encodedMessage =
-                encodeURIComponent(
-                    whatsappMessage
+                const encodedMessage =
+                    encodeURIComponent(
+                        whatsappMessage
+                    );
+
+
+
+                /*
+                    WhatsApp URL
+                */
+
+                const whatsappURL =
+                    `https://wa.me/${myNumber}?text=${encodedMessage}`;
+
+
+                /*
+                    Open WhatsApp
+                */
+
+                window.open(
+                    whatsappURL,
+                    "_blank"
                 );
 
+            }
+        );
 
-
-            /*
-                WhatsApp URL
-            */
-
-            const whatsappURL =
-                `https://wa.me/${myNumber}?text=${encodedMessage}`;
-
-
-            /*
-                Open WhatsApp
-            */
-
-            window.open(
-                whatsappURL,
-                "_blank"
-            );
-
-        }
-    );
-
-</script>
+    </script>
 
 </body>
 </html>
+```
